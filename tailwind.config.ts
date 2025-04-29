@@ -3,14 +3,19 @@ import type { Config } from "tailwindcss";
 const config: Config = {
     darkMode: ["class"],
     content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "*.{js,ts,jsx,tsx,mdx}"
+    "./pages/**/*.{js,ts,jsx,tsx,mdx,css}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx,css}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx,css}",
+    "./styles/**/*.{css}",
+    "*.{js,ts,jsx,tsx,mdx,css}"
   ],
   theme: {
   	extend: {
-  		colors: {
+      fontFamily: {
+        serif: ['"Noto Serif"', 'serif'],
+        ghibli: ['"Noto Serif"', 'serif'],
+      },
+       colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {

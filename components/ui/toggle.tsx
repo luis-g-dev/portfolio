@@ -3,6 +3,8 @@
 import * as React from "react"
 import * as TogglePrimitive from "@radix-ui/react-toggle"
 import { cva, type VariantProps } from "class-variance-authority"
+import { useState } from "react"
+import { Moon, Coffee, House } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
@@ -43,3 +45,43 @@ const Toggle = React.forwardRef<
 Toggle.displayName = TogglePrimitive.Root.displayName
 
 export { Toggle, toggleVariants }
+
+export default function VibeToggle() {
+  const [mode, setMode] = useState("dark");
+
+  const handleToggle = () => {
+    const nextMode = mode === "dark" ? "coffee" : mode === "coffee" ? "cozy" : "dark";
+    setMode(nextMode);
+    document.body.className = nextMode; // Apply the mode as a class to the body
+  };
+
+  return (
+    <button
+      onClick={handleToggle}
+      className={cn(
+        "inline-flex items-center gap-2 p-2 rounded-full border",
+        "bg-gray-100 border-gray-300 dark:bg-gray-800 dark:border-gray-600"
+      )}
+      aria-label="Toggle mode"
+    >
+      {mode === "dark" && (
+        <>
+          <Moon className="h-5 w-5 text-gray-700 dark:text-gray-300" />
+          <span className="text-sm text-gray-700 dark:text-gray-300">Dark</span>
+        </>
+      )}
+      {mode === "coffee" && (
+        <>
+          <Coffee className="h-5 w-5 text-brown-700 dark:text-brown-300" />
+          <span className="text-sm text-brown-700 dark:text-brown-300">Coffee</span>
+        </>
+      )}
+      {mode === "cozy" && (
+        <>
+          <House className="h-5 w-5 text-pink-700 dark:text-pink-300" />
+          <span className="text-sm text-pink-700 dark:text-pink-300">Cozy</span>
+        </>
+      )}
+    </button>
+  );
+}
