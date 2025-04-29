@@ -11,13 +11,19 @@ import { useTheme } from "@/contexts/theme-context"
 
 export function VibeMousefulness() {
   const [activeTab, setActiveTab] = useState("about")
-  const { isCozy } = useTheme()
+  const { isCoffee, isCozy } = useTheme()
 
   return (
-    <div className={cn(
-      "h-screen relative font-serif overflow-hidden",
-      isCozy ? "text-teal-50" : "text-[#2d4c4c]"
-    )}>
+    <div
+      className={cn(
+        "h-screen relative font-serif overflow-hidden",
+        isCoffee
+          ? "text-amber-200"
+          : isCozy
+          ? "text-teal-50"
+          : "text-[#2d4c4c]"
+      )}
+    >
       {/* Background Image */}
 
       {/* Content */}
@@ -30,7 +36,9 @@ export function VibeMousefulness() {
               size="sm"
               className={cn(
                 "border-none",
-                isCozy
+                isCoffee
+                  ? "bg-amber-800/90 hover:bg-amber-800 text-amber-200"
+                  : isCozy
                   ? "bg-teal-600/90 hover:bg-teal-600 text-teal-50"
                   : "bg-[#f5e9d0]/90 hover:bg-[#f5e9d0] text-[#2d4c4c]"
               )}
@@ -209,7 +217,9 @@ export function VibeMousefulness() {
                 href="https://github.com"
                 className={cn(
                   "px-4 py-2 rounded-md flex items-center gap-2 transition-colors",
-                  isCozy
+                  isCoffee
+                    ? "bg-amber-800/90 hover:bg-amber-800 text-amber-200"
+                    : isCozy
                     ? "bg-teal-600/90 hover:bg-teal-600 text-teal-50"
                     : "bg-[#f5e9d0]/90 hover:bg-[#f5e9d0] text-[#2d4c4c]"
                 )}

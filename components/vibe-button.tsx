@@ -9,13 +9,11 @@ import React from 'react'
 
 export function VibeButton() {
   const { theme, changeTheme } = useTheme()
+  const { isCoffee, isCozy } = useTheme()
   const [mounted, setMounted] = useState(false)
-
-  // Avoid hydration mismatch
   useEffect(() => {
     setMounted(true)
   }, [])
-
   if (!mounted) return null
 
   return (
@@ -24,21 +22,28 @@ export function VibeButton() {
         type="single"
         value={theme}
         onValueChange={(value) => changeTheme(value as any)}
-        className="inline-flex rounded-full bg-muted p-1"
+        className={cn(
+          "inline-flex rounded-full p-1",
+          isCoffee
+            ? "bg-amber-800/20"
+            : isCozy
+            ? "bg-teal-600/20"
+            : "bg-muted",
+        )}
         aria-label="Theme selector"
       >
         <ToggleGroup.Item
-          value="dark"
+          value="default"
           className={cn(
             "flex items-center rounded-full transition-colors",
-            theme === 'dark'
+            theme === 'default'
               ? 'space-x-1 px-3 py-2 bg-stone-800 text-stone-50'
               : 'p-2 hover:bg-stone-800/50 text-stone-400'
           )}
           aria-label="Dark theme"
         >
           <Moon className="h-5 w-5" />
-          {theme === 'dark' && <span className="text-sm">Dark</span>}
+          {theme === 'default' && <span className="text-sm">Dark</span>}
         </ToggleGroup.Item>
         {/* Coffee (caffeinated) */}
         <ToggleGroup.Item
