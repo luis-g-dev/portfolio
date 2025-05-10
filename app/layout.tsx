@@ -10,6 +10,7 @@ const notoSerif = Noto_Serif({
 
 import { ThemeProvider } from "@/contexts/theme-context"
 import { VibeButton } from "@/components/vibe-button"
+
 export default function RootLayout({
   children,
 }: Readonly<{

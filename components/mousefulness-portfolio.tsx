@@ -169,26 +169,20 @@ export function MousefulnessPortfolio() {
                   <CardContent className="pt-6">
                     <div
                       className={cn(
-                        "aspect-video rounded-md flex items-center justify-center mb-4",
+                        "relative aspect-video rounded-md overflow-hidden mb-4",
                         isCoffee
                           ? "bg-amber-950/60"
                           : isCozy
                           ? "bg-teal-900/60"
-                          : "bg-stone-900/80",
+                          : "bg-stone-900/80"
                       )}
                     >
-                      <div className="text-center mb-2">
-                        <p className="text-gray-300 text-sm">Command wheel visualization</p>
-                      </div>
-                      <div className="w-64 h-64 mx-auto">
-                        <Image
-                          src="/images/pie-chart.png"
-                          alt="Command Wheel"
-                          width={300}
-                          height={300}
-                          className="w-full h-full"
-                        />
-                      </div>
+                      <Image
+                        src="/images/mouseless.png"
+                        alt="Mouseless Demo"
+                        fill
+                        className="object-cover"
+                      />
                     </div>
                     <p className="text-gray-300">
                       Mouseless enables complete freedom from the mouse by providing an intuitive keyboard interface for
@@ -389,15 +383,11 @@ export function MousefulnessPortfolio() {
               <div className="flex items-center gap-4">
                 <a href="https://github.com/luis-g-dev/portfolio" target="_blank" rel="noopener noreferrer">
                   <Button
-                    variant="outline"
                     size="sm"
-                    className={cn(
-                      "gap-2 text-gray-300 hover:text-white",
-                      isCoffee ? "border-amber-700" : isCozy ? "border-teal-700" : "border-gray-700",
-                    )}
+                    className="gap-2"
                   >
-                    <Github className="h-4 w-4" />
-                    View on GitHub
+                   <Github className="h-4 w-4" />
+                   View on GitHub
                   </Button>
                 </a>
               </div>
