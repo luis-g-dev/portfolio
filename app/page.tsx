@@ -1,5 +1,5 @@
-import { MousefulnessPortfolio } from "@/components/mousefulness-portfolio"
+import { redirect } from "next/navigation"
 
 export default function HomePage() {
-  return <MousefulnessPortfolio />
+  redirect('/mousefulness')
 }

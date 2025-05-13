@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { ArrowLeft, Download, Github, ExternalLink, Share2, Cpu, Zap, Lock } from "lucide-react"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 
@@ -22,7 +23,7 @@ export default function GoMouselessPage() {
                 <span>Back to Mousefulness</span>
               </Link>
               <div className="flex items-center gap-2">
-                <div className="h-5 w-5 flex items-center justify-center text-[#00ADD8] font-bold">Go</div>
+                <Image src="/go-logo.svg" alt="Go logo" width={20} height={20} />
                 <span className="font-medium">mouseless</span>
               </div>
             </div>
@@ -38,9 +39,7 @@ export default function GoMouselessPage() {
                 className="inline-flex items-center justify-center p-3 rounded-full mb-4"
                 style={{ backgroundColor: 'rgba(0,173,216,0.2)' }}
               >
-                <div className="h-8 w-8 flex items-center justify-center">
-                  <span className="text-[#00ADD8] font-bold text-2xl">Go</span>
-                </div>
+                <Image src="/go-logo.svg" alt="Go logo" width={32} height={32} />
               </div>
               <h1 className="text-4xl md:text-5xl font-bold mb-4">Go mouseless</h1>
               <p className="text-xl text-stone-300 max-w-2xl mx-auto">
@@ -393,7 +392,7 @@ func (g *Grid) Navigate(direction Direction) {
           <div className="container mx-auto py-6 px-4">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <div className="flex items-center gap-2">
-                <div className="h-5 w-5 flex items-center justify-center text-[#00ADD8] font-bold">Go</div>
+                <Image src="/go-logo.svg" alt="Go logo" width={20} height={20} />
                 <span className="font-medium">mouseless</span>
               </div>
               <p className="text-stone-400 text-sm">© 2023 Mousefulness Project. Powered by Go.</p>

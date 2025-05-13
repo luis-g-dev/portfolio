@@ -77,18 +77,13 @@ export default function MousefulPage() {
                     <h3 className="font-medium text-white mb-2">Key Features</h3>
                     <ul className="space-y-2 text-stone-300 list-disc pl-5">
                       <li>Customizable radial command menu</li>
-                      <li>Application-specific command sets</li>
                       <li>Nested command hierarchies</li>
-                      <li>Gesture recognition</li>
                       <li>Keyboard shortcut integration</li>
-                      <li>Productivity analytics</li>
+                      {/*<li>Gesture recognition</li>*/}
                     </ul>
                   </div>
                 </div>
                 <div className="flex items-center justify-center">
-                  <div className="text-center mb-2">
-                    <p className="text-gray-300 text-sm">Command wheel visualization</p>
-                  </div>
                   <div className="w-64 h-64 relative">
                     <Image
                       src="/images/pie-chart.png"
@@ -186,6 +181,7 @@ export default function MousefulPage() {
             </div>
 
             {/* Use Cases */}
+            {/*
             <div className="mb-16">
               <h2 className="text-2xl font-bold mb-6 border-b border-stone-700 pb-2">Use Cases</h2>
               <div className="space-y-6">
@@ -215,7 +211,6 @@ export default function MousefulPage() {
                 </div>
               </div>
             </div>
-
             {/* Get Started */}
             <div className="text-center mt-16 p-8 bg-stone-800/70 backdrop-blur-sm rounded-lg border border-stone-600">
               <h2 className="text-2xl font-bold mb-4">Ready to enhance your mouse experience?</h2>
