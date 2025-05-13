@@ -1,36 +1,31 @@
 "use client"
 
 import { useState } from "react"
-import { ArrowRight, Keyboard, Mouse, MousePointer } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Keyboard, Mouse } from "lucide-react"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import Image from "next/image"
-import Link from "next/link"
 import { ThemeBackground } from "@/components/theme-background"
 import { useTheme } from "@/contexts/theme-context"
 import { cn } from "@/lib/utils"
-import Footer from "@/components/Footer"
+import ProjectCard from "@/components/ProjectCard"
 import Header from "@/components/Header"
+import Image from "next/image"
 
 export default function MousefulnessPage() {
   const [activeTab, setActiveTab] = useState("about")
   const { isCoffee, isCozy } = useTheme()
 
   return (
-    <div className="flex flex-col min-h-screen relative text-white">
+    <div>
       <ThemeBackground />
-      {/* Content */}
-      <div className="relative z-10 flex-1">
+      <div className="relative">
         <Header/>
-
-        {/* Main Content */}
-        <main className="container mx-auto px-4 pb-16">
+        <main className=" pb-8">
           <Tabs defaultValue="about" value={activeTab} onValueChange={setActiveTab} className="max-w-3xl mx-auto">
-            <div className="flex justify-center mb-8">
+            <div className="flex justify-center">
               <TabsList
                 className={cn(
-                  "grid grid-cols-2 w-full max-w-md backdrop-blur-sm",
+                  "grid grid-cols-2 w-full max-w-md",
                   isCoffee ? "bg-amber-900/50" : isCozy ? "bg-teal-900/50" : "bg-stone-800/70",
                 )}
               >
@@ -39,7 +34,7 @@ export default function MousefulnessPage() {
               </TabsList>
             </div>
 
-            <TabsContent value="about" className="space-y-8">
+            <TabsContent value="about">
               <div className="prose prose-invert max-w-none">
                 <blockquote
                     className={cn(
@@ -122,35 +117,26 @@ export default function MousefulnessPage() {
                 </a>
               </div>
             </TabsContent>
-            <TabsContent value="projects" className="space-y-8">
-              <div className="grid grid-cols-1 gap-8">
-                <Card
+            <TabsContent value="projects">
+              <div className="grid gap-8">
+                <ProjectCard
                   className={cn(
-                    "overflow-hidden backdrop-blur-sm",
                     isCoffee
                       ? "bg-amber-900/40 border-amber-700/50"
                       : isCozy
                       ? "bg-teal-900/40 border-teal-700/50"
                       : "bg-stone-800/70 border-stone-600",
                   )}
+                  icon={<Keyboard/>}
+                  title="mouseless"
+                  description="Click anywhere on screen using only the keyboard"
+                  technologies="TypeScript, Electron"
+                  linkHref="/mouseless"
                 >
-                  <CardHeader
-                    className={cn(
-                      isCoffee ? "bg-amber-800/40" : isCozy ? "bg-teal-800/40" : "bg-stone-700/40",
-                    )}
-                  >
-                    <CardTitle className="flex items-center gap-2 text-white">
-                      <Keyboard className="h-5 w-5" />
-                      mouseless
-                    </CardTitle>
-                    <CardDescription className="text-gray-300">
-                      Click anywhere on screen using only the keyboard
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="pt-6">
+                  <CardContent>
                     <div
                       className={cn(
-                        "relative aspect-video rounded-md overflow-hidden mb-4",
+                        "relative aspect-video mb-4",
                         isCoffee
                           ? "bg-amber-950/60"
                           : isCozy
@@ -171,108 +157,55 @@ export default function MousefulnessPage() {
                       and perform clicks, drags, and other mouse actions without ever touching the mouse.
                     </p>
                   </CardContent>
-                  <CardFooter
-                    className={cn(
-                      "border-t flex justify-between",
-                      isCoffee
-                        ? "border-amber-700/50 bg-amber-900/60"
-                        : isCozy
-                        ? "border-teal-700/50 bg-teal-900/60"
-                        : "border-stone-600 bg-stone-800/60",
-                    )}
-                  >
-                    <div className="text-sm text-gray-400">Technologies: TypeScript, Electron</div>
-                    <Link href="/mouseless">
-                      <Button variant="ghost" size="sm" className="gap-1 text-gray-200 hover:text-white">
-                        View Project <ArrowRight className="h-4 w-4" />
-                      </Button>
-                    </Link>
-                  </CardFooter>
-                </Card>
-
-                <Card
-                  className={cn(
-                    "overflow-hidden backdrop-blur-sm",
-                    isCoffee
-                      ? "bg-amber-900/40 border-amber-700/50"
-                      : isCozy
-                      ? "bg-teal-900/40 border-teal-700/50"
-                      : "bg-stone-800/70 border-stone-600",
-                  )}
+                </ProjectCard>
+                <ProjectCard
+                  icon={<Mouse/>}
+                  title="mouseful"
+                  description="Use your mouse to perform keyboard tasks"
+                  technologies="JavaScript, WebExtension API"
+                  linkHref="/mouseful"
                 >
-                  <CardHeader
+                  <div
                     className={cn(
-                      isCoffee ? "bg-amber-800/40" : isCozy ? "bg-teal-800/40" : "bg-stone-700/40",
+                      "relative aspect-video mb-4",
+                      isCoffee
+                        ? "bg-amber-950/60"
+                        : isCozy
+                        ? "bg-teal-900/60"
+                        : "bg-stone-900/80",
                     )}
                   >
-                    <CardTitle className="flex items-center gap-2 text-white">
-                      <Mouse className="h-5 w-5" />
-                      mouseful
-                    </CardTitle>
-                    <CardDescription className="text-gray-300">
-                      Use your mouse to perform keyboard tasks
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="pt-6">
-                    <div
-                      className={cn(
-                        "relative w-full aspect-video rounded-md overflow-hidden mb-4",
-                        isCoffee
-                          ? "bg-amber-950/60"
-                          : isCozy
-                          ? "bg-teal-900/60"
-                          : "bg-stone-900/80",
-                    )}>
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="relative h-full aspect-square">
-                          <Image
-                            src="/images/pie-chart.png"
-                            alt="Command Wheel"
-                            fill
-                            className="object-cover"
-                          />
-                        </div>
+                    <div className="absolute inset-0 flex justify-center">
+                      <div className="relative h-full aspect-square">
+                        <Image
+                          src="/images/pie-chart.png"
+                          alt="Command Wheel"
+                          fill
+                          className="object-cover"
+                        />
                       </div>
                     </div>
-                    <p className="text-gray-300">
-                      Mouseful transforms your mouse into a command center by mapping gestures, clicks, and movements to
-                      keyboard shortcuts and commands. The radial menu above demonstrates how different sections can be
-                      assigned to various command categories:
-                    </p>
-                    <ul className="mt-2 space-y-1 text-gray-300 list-disc pl-5">
-                      <li><span className="text-white font-medium">Modifiers (a):</span> Ctrl, Alt, Shift combinations</li>
-                      <li><span className="text-white font-medium">Keyboard (b):</span> Common keyboard shortcuts</li>
-                      <li><span className="text-white font-medium">Clicks (c):</span> Different click types</li>
-                      <li><span className="text-white font-medium">Functions (d):</span> Application-specific commands</li>
-                      <li><span className="text-white font-medium">Navigation (e):</span> Movement and scrolling</li>
-                      <li><span className="text-white font-medium">Text (f):</span> Text manipulation commands</li>
-                      <li><span className="text-white font-medium">Nested Commands (z):</span> Contextual sub-menus (1-4)</li>
-                    </ul>
-                  </CardContent>
-                  <CardFooter
-                    className={cn(
-                      "border-t flex justify-between",
-                      isCoffee
-                        ? "border-amber-700/50 bg-amber-900/60"
-                        : isCozy
-                        ? "border-teal-700/50 bg-teal-900/60"
-                        : "border-stone-600 bg-stone-800/60",
-                    )}
-                  >
-                    <div className="text-sm text-gray-400">Technologies: JavaScript, WebExtension API</div>
-                    <Link href="/mouseful">
-                      <Button variant="ghost" size="sm" className="gap-1 text-gray-200 hover:text-white">
-                        View Project <ArrowRight className="h-4 w-4" />
-                      </Button>
-                    </Link>
-                  </CardFooter>
-                </Card>
+                  </div>
+                  <p className="text-gray-300">
+                    Mouseful transforms your mouse into a command center by mapping gestures, clicks, and movements to
+                    keyboard shortcuts and commands. The radial menu above demonstrates how different sections can be
+                    assigned to various command categories:
+                  </p>
+                  <ul className=" list-disc pl-5">
+                    <li><span className="text-white">Modifiers (a):</span> Ctrl, Alt, Shift combinations</li>
+                    <li><span className="text-white">Keyboard (b):</span> Common keyboard shortcuts</li>
+                    <li><span className="text-white">Clicks (c):</span> Different click types</li>
+                    <li><span className="text-white">Navigation (e):</span> Movement and scrolling</li>
+                    <li><span className="text-white">Functions (d):</span> Application-specific commands</li>
+                    <li><span className="text-white">Text (f):</span> Text manipulation commands</li>
+                    <li><span className="text-white">Nested Commands (z):</span> Contextual sub-menus (1-4)</li>
+                  </ul>
+                </ProjectCard>
               </div>
             </TabsContent>
           </Tabs>
         </main>
       </div>
-      <Footer/>
     </div>
   )
 }

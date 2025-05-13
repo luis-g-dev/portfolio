@@ -17,7 +17,7 @@ export default function Footer() {
     const { border, bg, text } = colors[mode]
 
   return (
-    <footer className={cn("border-t backdrop-blur-sm", border, bg, text)}>
+    <footer className={cn("w-full border-t backdrop-blur-sm", border, bg, text)}>
         <div className="container mx-auto py-4 flex justify-between items-center">
           <div className="flex gap-2">
             <MousePointer />
