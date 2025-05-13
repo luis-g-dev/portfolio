@@ -1,5 +1,5 @@
 import React from "react"
-import { MousePointer, ArrowRight } from "lucide-react"
+import { MousePointer } from "lucide-react"
 import { SiGithub } from "react-icons/si"
 import { Button } from "@/components/ui/button"
 import { useTheme } from "@/contexts/theme-context"
