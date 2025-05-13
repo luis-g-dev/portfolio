@@ -1,7 +1,8 @@
 "use client"
 
 import { useState } from "react"
-import { Github, ArrowLeft } from "lucide-react"
+import { ArrowLeft } from "lucide-react"
+import { SiGithub } from "react-icons/si"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import Image from "next/image"
@@ -224,7 +225,7 @@ export function VibeMousefulness() {
                     : "bg-[#f5e9d0]/90 hover:bg-[#f5e9d0] text-[#2d4c4c]"
                 )}
               >
-                <Github className="h-5 w-5" />
+                <SiGithub className="h-5 w-5" />
                 View on GitHub
               </Link>
               <Button

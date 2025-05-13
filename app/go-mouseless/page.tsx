@@ -1,8 +1,10 @@
 import Link from "next/link"
-import { ArrowLeft, Download, Github, ExternalLink, Share2, Cpu, Zap, Lock } from "lucide-react"
+import { ArrowLeft, Download, ExternalLink, Share2, Cpu, Zap, Lock } from "lucide-react"
 import Image from "next/image"
+import { SiGithub } from "react-icons/si"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import Footer from "@/components/Footer"
 
 export default function GoMouselessPage() {
   // Go's primary color
@@ -51,7 +53,7 @@ export default function GoMouselessPage() {
                   Download Go Binary
                 </Button>
                 <Button variant="outline" className="gap-2 border-[#00ADD8]/70 text-[#00ADD8] hover:bg-[#00ADD8]/10">
-                  <Github className="h-4 w-4" />
+                  <SiGithub className="h-4 w-4" />
                   View Source
                 </Button>
                 <Link href="/roadmap">
@@ -388,17 +390,7 @@ func (g *Grid) Navigate(direction Direction) {
         </main>
 
         {/* Footer */}
-        <footer className="border-t border-[#00ADD8]/30 bg-stone-900/80 backdrop-blur-sm mt-12">
-          <div className="container mx-auto py-6 px-4">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-              <div className="flex items-center gap-2">
-                <Image src="/go-logo.svg" alt="Go logo" width={20} height={20} />
-                <span className="font-medium">mouseless</span>
-              </div>
-              <p className="text-stone-400 text-sm">© 2023 Mousefulness Project. Powered by Go.</p>
-            </div>
-          </div>
-        </footer>
+        <Footer />
       </div>
     </div>
   )

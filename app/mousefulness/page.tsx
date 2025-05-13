@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { ArrowRight, Github, Keyboard, Mouse, MousePointer } from "lucide-react"
+import { ArrowRight, Keyboard, Mouse, MousePointer } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
@@ -10,6 +10,7 @@ import Link from "next/link"
 import { ThemeBackground } from "@/components/theme-background"
 import { useTheme } from "@/contexts/theme-context"
 import { cn } from "@/lib/utils"
+import Footer from "@/components/Footer"
 
 export default function MousefulnessPage() {
   const [activeTab, setActiveTab] = useState("about")
@@ -32,9 +33,11 @@ export default function MousefulnessPage() {
               <MousePointer className={cn("h-8 w-8", isCoffee ? "text-amber-400" : isCozy ? "text-teal-400" : "text-primary")} />
             </div>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight">mousefulness</h1>
-            <p className="text-xl text-gray-300 max-w-2xl">
-              /ˈmaʊsfəlnəs/ <span className="italic">noun</span> - The art of input flow state <br/> 
-            {'<input>flow</input>'}
+            <p className="text-xl text-green-500 max-w-2xl">
+              /* /ˈmaʊsfəlnəs/ <span className="italic">noun</span> - The art of input flow state */<br/> 
+              <span className="text-gray-300">&lt;<span className="text-blue-500">input</span>&gt;</span>
+              <span className="text-white"> flow </span>
+              <span className="text-gray-300">&lt;<span className="text-blue-500">input</span>&gt;</span>
             </p>
           </div>
         </header>
@@ -286,37 +289,8 @@ export default function MousefulnessPage() {
             </TabsContent>
           </Tabs>
         </main>
-
-        {/* Footer */}
-        <footer
-          className={cn(
-            "mt-auto border-t backdrop-blur-sm",
-            isCoffee
-              ? "border-amber-700/50 bg-amber-900/50"
-              : isCozy
-              ? "border-teal-700/50 bg-teal-900/50"
-              : "border-stone-700 bg-stone-800/70",
-          )}
-        >
-          <div className="container mx-auto py-6 px-4">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-              <div className="flex items-center gap-2">
-                <MousePointer className={cn("h-5 w-5", isCoffee ? "text-amber-400" : isCozy ? "text-teal-400" : "text-primary")} />
-                <span className="font-medium">mousefulness</span>
-              </div>
-
-              <div className="flex items-center gap-4">
-                <a href="https://github.com/luis-g-dev/portfolio" target="_blank" rel="noopener noreferrer">
-                  <Button size="sm" className="gap-2">
-                    <Github className="h-4 w-4" />
-                    View on GitHub
-                  </Button>
-                </a>
-              </div>
-            </div>
-          </div>
-        </footer>
       </div>
+      <Footer/>
     </div>
   )
 }

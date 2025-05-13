@@ -1,9 +1,11 @@
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowLeft, Mouse, Download, ExternalLink, Github, Share2 } from "lucide-react"
+import { ArrowLeft, Mouse, Download, ExternalLink, Share2 } from "lucide-react"
+import { SiGithub } from "react-icons/si"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { ThemeBackground } from "@/components/theme-background"
+import Footer from "@/components/Footer"
 
 export default function MousefulPage() {
   return (
@@ -46,7 +48,7 @@ export default function MousefulPage() {
                   Download Beta
                 </Button>
                 <Button variant="outline" className="gap-2 border-stone-600">
-                  <Github className="h-4 w-4" />
+                  <SiGithub className="h-4 w-4" />
                   View Source
                 </Button>
                 <Link href="/roadmap">
@@ -235,17 +237,7 @@ export default function MousefulPage() {
         </main>
 
         {/* Footer */}
-        <footer className="border-t border-stone-700 bg-stone-800/70 backdrop-blur-sm mt-12">
-          <div className="container mx-auto py-6 px-4">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-              <div className="flex items-center gap-2">
-                <Mouse className="h-5 w-5 text-primary" />
-                <span className="font-medium">mouseful</span>
-              </div>
-              <p className="text-stone-400 text-sm">© 2023 Mousefulness Project. Enhancing mouse interaction.</p>
-            </div>
-          </div>
-        </footer>
+        <Footer />
       </div>
     </div>
   )
