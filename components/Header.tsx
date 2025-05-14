@@ -6,11 +6,11 @@ export default function Header() {
     const { isCoffee, isCozy } = useTheme()
 
     return (
-        <header className="container mx-auto pt-12 pb-6 px-4">
+        <header className="mx-auto pb-2">
             <div className="flex flex-col items-center text-center space-y-4">
             <div
                 className={cn(
-                "flex items-center justify-center w-16 h-16 rounded-full mb-2 backdrop-blur-sm",
+                "flex items-center justify-center w-16 h-16 rounded-full backdrop-blur-sm",
                 isCoffee ? "bg-amber-500/20" : isCozy ? "bg-teal-500/20" : "bg-primary/20",
                 )}
             >

@@ -4,7 +4,7 @@ import './globals.css'
 import { ThemeProvider } from "@/contexts/theme-context"
 import { VibeButton } from "@/components/vibe-button"
 import Footer from '@/components/Footer'
-import Header from "@/components/Header"
+import { ThemeBackground } from '@/components/theme-background'
 
 export default function RootLayout({
   children,
@@ -20,9 +20,10 @@ export default function RootLayout({
       </head>
       <body className="flex flex-col min-h-screen">
         <ThemeProvider>
+        <ThemeBackground/>
           <div className="flex-grow">
             {children}
-            <VibeButton />
+            <VibeButton/>
           </div>
           <Footer />
         </ThemeProvider>
