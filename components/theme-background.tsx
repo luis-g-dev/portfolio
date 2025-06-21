@@ -29,7 +29,7 @@ export function ThemeBackground({ className }: ThemeBackgroundProps) {
         <>
           {/* Only render Image when we have a valid src */}
           <Image
-            src="/images/coffee-background.png"
+            src="images/coffee-background.png"
             alt="Coffee Background"
             fill
             className="object-cover"
@@ -42,7 +42,7 @@ export function ThemeBackground({ className }: ThemeBackgroundProps) {
         <>
           {/* Cozy (vibe) background */}
           <Image
-            src="/images/cozy-background.png"
+            src="images/cozy-background.png"
             alt="Cozy Background"
             fill
             className="object-cover opacity-80"
@@ -54,7 +54,7 @@ export function ThemeBackground({ className }: ThemeBackgroundProps) {
         <>
           {/* Default (dark) background */}
           <Image
-            src="/images/code-background.png"
+            src="images/code-background.png"
             alt="Dark Background"
             fill
             className="object-cover opacity-100"

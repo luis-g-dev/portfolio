@@ -77,7 +77,7 @@ export default function MousefulnessPage() {
                 <ProjectCard className={cardBgClass}icon={<Keyboard/>}title="mouseless"description="Click anywhere on screen using only the keyboard"technologies="TypeScript, Electron"linkHref="/mouseless">
                   <CardContent>
                     <div className={cn("relative aspect-video mb-4",contentBgClass)}>
-                      <Image src="/images/mouseless.png" alt="Mouseless Demo" className="object-cover" fill/>
+                      <Image src="images/mouseless.png" alt="Mouseless Demo" className="object-cover" fill/>
                     </div>
                     <p className="text-gray-300">
                       Mouseless enables complete freedom from the mouse by providing an intuitive keyboard interface for
@@ -90,7 +90,7 @@ export default function MousefulnessPage() {
                   <div className={cn("relative aspect-video mb-4",contentBgClass,)}>
                     <div className="absolute inset-0 flex justify-center">
                       <div className="relative h-full aspect-square">
-                        <Image src="/images/pie-chart.png" alt="Mousefull Demo" className="object-cover" fill/>
+                        <Image src="images/pie-chart.png" alt="Mousefull Demo" className="object-cover" fill/>
                       </div>
                     </div>
                   </div>
