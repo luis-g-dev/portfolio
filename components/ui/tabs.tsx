@@ -22,7 +22,7 @@ const TabsList = React.forwardRef<
           ? "bg-amber-800 text-amber-200"
           : isCozy
           ? "bg-teal-600 text-teal-50"
-          : "bg-muted text-muted-foreground",
+          : " text-muted-foreground",
         className
       )}
       {...props}

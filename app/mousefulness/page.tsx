@@ -5,11 +5,11 @@ import { Keyboard, Mouse } from "lucide-react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { useTheme } from "@/contexts/theme-context"
 import { cn } from "@/lib/utils"
+import { CardContent } from "@/components/ui/card"
+import MousefulnessCard from "@/components/MousefulnessCard"
 import ProjectCard from "@/components/ProjectCard"
 import Header from "@/components/Header"
 import Image from "next/image"
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
-import MousefulnessCard from "@/components/MousefulnessCard"
 
 export default function MousefulnessPage() {
   const TAB_ABOUT = "about";
@@ -18,15 +18,11 @@ export default function MousefulnessPage() {
   const { isCoffee, isCozy } = useTheme()
 
   // theme-based class variables
-  const tabBgClass = isCoffee ? "bg-amber-900/50" : isCozy ? "bg-teal-900/50" : "bg-stone-800/70"
-  const cardBgClass = isCoffee ? "bg-amber-900/40 border-amber-700/50" : isCozy ? "bg-teal-900/40 border-teal-700/50" : "bg-stone-800/70 border-stone-600"
-  const cardHoverTextColor = isCoffee ? "group-hover:text-amber-400" : isCozy ? "group-hover:text-teal-400" : "group-hover:text-sky-400"
-  const contentBgClass = isCoffee ? "bg-amber-950/60" : isCozy ? "bg-teal-900/60" : "bg-stone-900/80"
+  const tabBgClass = isCoffee ? "bg-amber-900/50" : isCozy ? "bg-teal-900/50" : "bg-stone-800/50"
+  const cardBgClass = isCoffee ? "bg-amber-900/40 border-amber-700/50" : isCozy ? "bg-teal-900/40 border-teal-700/50" : "bg-stone-800/40 border-stone-600/50"
+  const contentBgClass = isCoffee ? "bg-amber-950/60" : isCozy ? "bg-teal-900/60" : "bg-stone-900/60"
   const blockquoteBorderClass = isCoffee ? "border-amber-500" : isCozy ? "border-teal-500" : "border-primary"
   const paragraphClass = "text-lg leading-relaxed text-gray-300"
-  const cardWrapperClass = "backdrop-blur-sm cursor-pointer transition-transform transform hover:scale-105 group"
-  const cardTitleBaseClass = "flex gap-2"
-  const cardContentTextClass = "text-gray-300"
 
   return (
     <div>
@@ -42,7 +38,7 @@ export default function MousefulnessPage() {
             </div>
 
             <TabsContent value={TAB_ABOUT}>
-              <div className="prose prose-invert max-w-none">
+              <div>
                 <blockquote className={cn("text-xl italic mb-4 mx-auto text-center",blockquoteBorderClass)}>
                     "The ability to not have to use the mouse at all but when using it using it to its full potential"
                 </blockquote>
@@ -81,7 +77,7 @@ export default function MousefulnessPage() {
                 <ProjectCard className={cardBgClass}icon={<Keyboard/>}title="mouseless"description="Click anywhere on screen using only the keyboard"technologies="TypeScript, Electron"linkHref="/mouseless">
                   <CardContent>
                     <div className={cn("relative aspect-video mb-4",contentBgClass)}>
-                      <Image src="/images/mouseless.png" alt="Mouseless Demo" fill className="object-cover"/>
+                      <Image src="/images/mouseless.png" alt="Mouseless Demo" className="object-cover" fill/>
                     </div>
                     <p className="text-gray-300">
                       Mouseless enables complete freedom from the mouse by providing an intuitive keyboard interface for
@@ -94,7 +90,7 @@ export default function MousefulnessPage() {
                   <div className={cn("relative aspect-video mb-4",contentBgClass,)}>
                     <div className="absolute inset-0 flex justify-center">
                       <div className="relative h-full aspect-square">
-                        <Image src="/images/pie-chart.png" alt="Command Wheel" fill className="object-cover"/>
+                        <Image src="/images/pie-chart.png" alt="Mousefull Demo" className="object-cover" fill/>
                       </div>
                     </div>
                   </div>

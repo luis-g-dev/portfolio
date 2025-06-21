@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils"
 
 export default function Footer() {
     const colors = {
-        default: { border: "border-stone-700", bg: "bg-stone-800/70", text: "text-primary" },
+        default: { border: "border-stone-700/50", bg: "bg-stone-800/50", text: "text-primary" },
         coffee:  { border: "border-amber-700/50", bg: "bg-amber-900/50", text: "text-amber-400" },
         cozy:    { border: "border-teal-700/50",   bg: "bg-teal-900/50",   text: "text-teal-400" }
     };
