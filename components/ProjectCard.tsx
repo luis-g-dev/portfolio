@@ -18,7 +18,6 @@ interface ProjectCardProps {
   title: string
   description: string
   children: ReactNode
-  technologies: string
   linkHref: string
   className?: string
 }
@@ -28,7 +27,6 @@ export default function ProjectCard({
   title,
   description,
   children,
-  technologies,
   linkHref,
   className,
 }: ProjectCardProps) {
@@ -64,8 +62,7 @@ export default function ProjectCard({
         </CardDescription>
       </CardHeader>
       <CardContent className="pt-6">{children}</CardContent>
-      <CardFooter className={cn("border-t flex justify-between", footerBg)}>
-        <div className="text-sm text-gray-400">Technologies: {technologies}</div>
+      <CardFooter className={cn("border-t flex justify-end", footerBg)}>
         <Link href={linkHref}>
           <Button variant="ghost" size="sm" className="gap-1 text-gray-200 hover:text-white">
             View Project <ArrowRight className="h-4 w-4" />

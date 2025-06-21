@@ -74,7 +74,7 @@ export default function MousefulnessPage() {
             </TabsContent>
             <TabsContent value={TAB_PROJECTS}>
               <div className="grid gap-8">
-                <ProjectCard className={cardBgClass}icon={<Keyboard/>}title="mouseless"description="Click anywhere on screen using only the keyboard"technologies="TypeScript, Electron"linkHref="/mouseless">
+                <ProjectCard className={cardBgClass}icon={<Keyboard/>}title="mouseless"description="Click anywhere on screen using only the keyboard"linkHref="/mouseless">
                   <CardContent>
                     <div className={cn("relative aspect-video mb-4",contentBgClass)}>
                       <Image src="images/mouseless.png" alt="Mouseless Demo" className="object-cover" fill/>
@@ -86,7 +86,7 @@ export default function MousefulnessPage() {
                     </p>
                   </CardContent>
                 </ProjectCard>
-                <ProjectCard icon={<Mouse/>} title="mouseful" description="Use your mouse to perform keyboard tasks" technologies="JavaScript, WebExtension API" linkHref="/mouseful">
+                <ProjectCard icon={<Mouse/>} title="mouseful" description="Use your mouse to perform keyboard tasks" linkHref="/mouseful">
                   <div className={cn("relative aspect-video mb-4",contentBgClass,)}>
                     <div className="absolute inset-0 flex justify-center">
                       <div className="relative h-full aspect-square">
